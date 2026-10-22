@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: super-six-desk
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: echo "no build step needed"
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
